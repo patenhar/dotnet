@@ -51,3 +51,10 @@
         }
     </tbody>
 </table>
+
+<h2>Product list</h2>
+
+@foreach (var item in Model)
+{
+    @await Html.PartialAsync("_ProductCard", item)
+}
