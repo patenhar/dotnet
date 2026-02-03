@@ -8,4 +8,5 @@ public interface IProductService
     Task<ProductDto> CreateProduct(CreateProductDto productDto);
     Task UpdateProduct(UpdateProductDto productDto);
     Task DeleteProduct(Guid id);
+    int GetTotalProducts();
 }

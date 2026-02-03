@@ -10,6 +10,11 @@ public class ProductService(IProductRepository productRepository, IMapper mapper
     private readonly IProductRepository _productRepository = productRepository;
     private readonly IMapper _mapper = mapper;
 
+    public int GetTotalProducts()
+    {
+        return _productRepository.GetTotalProducts();
+    }
+
     public async Task<IEnumerable<ProductDto>> GetAllProducts()
     {
         var products = await _productRepository.GetAll();

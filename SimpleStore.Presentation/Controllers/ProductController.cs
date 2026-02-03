@@ -14,6 +14,7 @@ public class ProductController(IProductService productService, IMapper mapper) :
 
     public async Task<IActionResult> Index()
     {
+        ViewBag.TotalProducts = _productService.GetTotalProducts();
         var products = await _productService.GetAllProducts();
         return View(products);
     }
