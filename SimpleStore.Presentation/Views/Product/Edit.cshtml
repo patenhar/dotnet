@@ -1,8 +1,9 @@
-@model SimpleStore.Business.DTOs.CreateProductDto
+@model SimpleStore.Business.DTOs.UpdateProductDto
 
-<h2>Create Product</h2>
-<form asp-action="Create" method="post">
+<h2>Update Product</h2>
+<form asp-action="Edit" method="post">
     @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
     <p>
         <label>Name:</label><br/>
         <input asp-for="Title"/><br/>

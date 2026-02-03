@@ -16,7 +16,7 @@ public class ProductService(IProductRepository productRepository, IMapper mapper
         return _mapper.Map<IEnumerable<ProductDto>>(products);
     }
 
-    public async Task<ProductDto> GetProductById(int id)
+    public async Task<ProductDto> GetProductById(Guid id)
     {
         return _mapper.Map<ProductDto>(await _productRepository.GetById(id));
     }
@@ -33,7 +33,7 @@ public class ProductService(IProductRepository productRepository, IMapper mapper
         await _productRepository.Update(product);
     }
 
-    public async Task DeleteProduct(int id)
+    public async Task DeleteProduct(Guid id)
     {
         await _productRepository.Delete(id);
     }

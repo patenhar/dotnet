@@ -18,7 +18,7 @@ public class ProductController(IProductService productService, IMapper mapper) :
         return View(products);
     }
 
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(Guid id)
     {
         var product = await _productService.GetProductById(id);
         if (product == null)
@@ -41,7 +41,7 @@ public class ProductController(IProductService productService, IMapper mapper) :
         return RedirectToAction(nameof(Index));
     }
 
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit(Guid id)
     {
         var product = await _productService.GetProductById(id);
         if (product == null)
@@ -61,7 +61,7 @@ public class ProductController(IProductService productService, IMapper mapper) :
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(Guid id)
     {
         await _productService.DeleteProduct(id);
         return RedirectToAction(nameof(Index));

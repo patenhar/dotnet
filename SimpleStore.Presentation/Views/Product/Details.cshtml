@@ -1,0 +1,19 @@
+@model SimpleStore.Business.DTOs.ProductDto
+
+<h2>Product Details</h2>
+<p>
+    Id: @Model.Id
+</p>
+<p>
+    Title: @Model.Title
+</p>
+<p>
+    Description: @Model.Description
+</p>
+<p>
+    Stock: @Model.Stock
+</p>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+    | <a asp-action="Index">Back</a>
+</p>

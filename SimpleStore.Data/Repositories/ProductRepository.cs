@@ -15,7 +15,7 @@ public class ProductRepository(ApplicationDbContext context) : IProductRepositor
                 .ToListAsync();
         }
 
-        public async Task<Product?> GetById(int id)
+        public async Task<Product?> GetById(Guid id)
         {
             return await _context.Products.FindAsync(id);
         }
@@ -33,7 +33,7 @@ public class ProductRepository(ApplicationDbContext context) : IProductRepositor
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(Guid id)
         {
             var product = await _context.Products.FindAsync(id);
             if (product != null)
